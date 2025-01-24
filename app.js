@@ -2,8 +2,12 @@ let nomeAmigos = [];
 
 function adicionarAmigo(nome) {
     nome = document.getElementById('amigo').value;
-    nomeAmigos.push(nome);
-    console.log(nomeAmigos);
+    if (nome == ' ') {
+        alert('Por favor, insira um nome');
+        limpaCampo();
+    } else {
+        nomeAmigos.push(nome);
+    }
     limpaCampo();
     exibirTextoNaTela(nomeAmigos);
 }
