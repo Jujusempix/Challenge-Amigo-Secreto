@@ -3,7 +3,9 @@ let nomeAmigos = [];
 function adicionarAmigo(nome) {
     nome = document.getElementById('amigo').value;
     nomeAmigos.push(nome);
-    exibirTextoNaTela(nome)
+    console.log(nomeAmigos);
+    limpaCampo();
+    exibirTextoNaTela(nomeAmigos);
 }
 
 function exibirTextoNaTela(texto){
@@ -11,4 +13,7 @@ function exibirTextoNaTela(texto){
     campo.innerHTML = texto;
 }
 
-console.log(nomeAmigos);
+function limpaCampo() {
+    campo = document.getElementById('amigo');
+    campo.value = ' ';
+}
