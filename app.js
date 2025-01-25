@@ -2,22 +2,23 @@ let nomeAmigos = [];
 
 function adicionarAmigo(nome) {
     nome = document.getElementById('amigo').value;
-    if (nome == ' ') {
+    if (nome == '') {
         alert('Por favor, insira um nome');
-        limpaCampo();
     } else {
         nomeAmigos.push(nome);
     }
     limpaCampo();
-    exibirTextoNaTela(nomeAmigos);
+    exibirTextoNaTela(nome);
+    console.log(nomeAmigos);
+    console.log(nome);
 }
 
 function exibirTextoNaTela(texto){
-    let campo = document.getElementById('listaAmigos');
+    let campo = document.querySelector('ul').appendChild(document.createElement('li'));
     campo.innerHTML = texto;
 }
 
 function limpaCampo() {
     campo = document.getElementById('amigo');
-    campo.value = ' ';
+    campo.value = '';
 }
