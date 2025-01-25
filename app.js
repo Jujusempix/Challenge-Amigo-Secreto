@@ -1,15 +1,15 @@
-let nomeAmigos = [];
+let listaAmigos = [];
 
 function adicionarAmigo(nome) {
     nome = document.getElementById('amigo').value;
     if (nome == '') {
         alert('Por favor, insira um nome');
     } else {
-        nomeAmigos.push(nome);
+        listaAmigos.push(nome);
     }
     limpaCampo();
     exibirTextoNaTela(nome);
-    console.log(nomeAmigos);
+    console.log(listaAmigos);
     console.log(nome);
 }
 
@@ -21,4 +21,15 @@ function exibirTextoNaTela(texto){
 function limpaCampo() {
     campo = document.getElementById('amigo');
     campo.value = '';
+}
+
+function limpaAmigos() {
+    campo = document.getElementById('listaAmigos');
+    campo.innerHTML = ''
+}
+
+function sortearAmigo() {
+    let sorteio =  parseInt(Math.random() * listaAmigos.length + 1);
+    limpaAmigos()
+    exibirTextoNaTela(sorteio)
 }
