@@ -9,16 +9,11 @@ function adicionarAmigo(nome) {
         limpaTudo('resultado');
     }
     limpaTudo('amigo');
-    exibirAmigos(nome);
+    exibirTextoEmUl('listaAmigos', nome);
 }
 
-function exibirAmigos(texto){
-    let campo = document.getElementById('listaAmigos').appendChild(document.createElement('li'));
-    campo.innerHTML = texto;
-}
-
-function exibirSorteado(texto) {
-    campo = document.getElementById('resultado').appendChild(document.createElement('li'));
+function exibirTextoEmUl(tag, texto){
+    let campo = document.getElementById(tag).appendChild(document.createElement('li'));
     campo.innerHTML = texto;
 }
 
@@ -36,7 +31,7 @@ function sortearAmigo() {
         alert('Não há nomes para sortear, por favor, insira novos nomes');
     } else {
         limpaTudo('listaAmigos');
-        exibirSorteado(`O nome sorteado foi: ${listaAmigos[sorteio]}`);
+        exibirTextoEmUl('resultado', `O nome sorteado foi: ${listaAmigos[sorteio]}`);
         listaAmigos.length = 0
     }
 }
